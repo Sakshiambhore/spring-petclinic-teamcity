@@ -48,12 +48,7 @@ public class PetClinicIntegrationTests {
 		vets.findAll();
 		vets.findAll(); // served from cache
 	}
-	
-    @Test
-	void contexloads() {
-		assertEquals(2,2);
-	}
-	
+
 	@Test
 	void testOwnerDetails() {
 		RestTemplate template = builder.rootUri("http://localhost:" + port).build();
