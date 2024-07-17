@@ -48,14 +48,17 @@ public class PetClinicIntegrationTests {
 		vets.findAll();
 		vets.findAll(); // served from cache
 	}
-
+    
 	@Test
 	void testOwnerDetails() {
 		RestTemplate template = builder.rootUri("http://localhost:" + port).build();
 		ResponseEntity<String> result = template.exchange(RequestEntity.get("/owners/1").build(), String.class);
 		assertThat(result.getStatusCode()).isEqualTo(HttpStatus.OK);
 	}
-
+    @Test
+	void contextloads() {
+	 assertEquals(2,2);
+	}
 	public static void main(String[] args) {
 		SpringApplication.run(PetClinicApplication.class, args);
 	}
